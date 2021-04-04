@@ -54,7 +54,7 @@ The dataset split files of office or office_home are stored as follows,
 `pip install -r requirements.txt`
 
 ## Train & Test
-If you run the experiment on one adaptation scanerio, like real to clipart of the DomainNet,
+If you run the experiment on one adaptation scanerio, like real to sketch of the DomainNet,
 ```
 python main.py --dataset multi --source real --target sketch
 ```
