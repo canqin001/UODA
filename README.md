@@ -17,7 +17,7 @@ SIAM International Conference on Data Mining (SDM), 2021.
 Current adversarial adaptation methods attempt to align the cross-domain features, whereas two challenges remain unsolved: 1) the conditional distribution mismatch and 2) the bias of the decision boundary towards the source domain. To solve these challenges, we propose a novel framework for semi-supervised domain adaptation by unifying the learning of opposite structures (UODA). UODA consists of a generator and two classifiers (i.e., the source-scattering classifier and the target-clustering classifier), which are trained for contradictory purposes. The target-clustering classifier attempts to cluster the target features to improve intra-class density and enlarge inter-class divergence. Meanwhile, the source-scattering classifier is designed to scatter the source features to enhance the decision boundary's smoothness. Through the alternation of source-feature expansion and target-feature clustering procedures, the target features are well-enclosed within the dilated boundary of the corresponding source features. This strategy can make the cross-domain features to be precisely aligned against the source bias simultaneously. Moreover, to overcome the model collapse through training, we progressively update the measurement of feature's distance and their representation via an adversarial training paradigm. Extensive experiments on the benchmarks of DomainNet and Office-home datasets demonstrate the superiority of our approach over the state-of-the-art methods.
 
 ## Dataset
-This part follows the same protocol of [MME](https://github.com/VisionLearningGroup/SSDA_MME).
+The data processing follows the protocol of [MME](https://github.com/VisionLearningGroup/SSDA_MME).
 
 To get data, run
 
@@ -41,7 +41,13 @@ The office and office home datasets are organized in the following ways,
 
  `./data/office/amazon/category_name`,
  
- `./data/office_home/Real/category_name`,
+ `./data/office_home/Real/category_name`.
+ 
+The dataset split files of office or office_home are stored as follows,
+
+`./data/txt/office/labeled_source_images_amazon.txt`,
+
+`./data/txt/office_home/unlabeled_target_images_Art_3.txt`,
 
 
 ## Requirements
