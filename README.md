@@ -2,7 +2,6 @@
 # Semi-supervised Domain Adaptation - UODA
 
 This repo contains the source code and dataset for our SDM 2021 paper:
-
 [**Contradictory Structure Learning for Semi-supervised Domain Adaptation**](https://arxiv.org/pdf/2002.02545.pdf)
 <br>
 SIAM International Conference on Data Mining (SDM), 2021.
@@ -41,12 +40,12 @@ The dataset split files are stored as follows,
 The office and office home datasets are organized in the following ways,
 
  `./data/office/amazon/category_name`,
+ 
  `./data/office_home/Real/category_name`,
 
 
 ## Requirements
 `pip install -r requirements.txt`
-
 
 ## Train & Test
 If you run the experiment on one adaptation scanerio, like real to clipart of the DomainNet,
