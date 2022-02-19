@@ -223,11 +223,8 @@ def train():
         output_t = G(im_data_t)
         out_t = F1(output_t)
 
-
-
         loss_s = criterion(out_s, gt_labels_s) 
         loss_t = criterion(out_t, gt_labels_t) 
-
 
         loss = 0.75 * loss_s + 0.25 * loss_t
 
@@ -242,12 +239,8 @@ def train():
         output_s = G(im_data_s)
         out_s = F2(output_s)
 
-        out_t1 = F1(output_t)
-
-
         loss_s = criterion(out_s, gt_labels_s) 
         loss_t = criterion(out_t, gt_labels_t) 
-
         
         loss = (0.25 * loss_s + 0.75 * loss_t) 
 
@@ -329,17 +322,17 @@ def train():
                 f.write('step %d best %f final %f \n' % (step,
                                                          best_acc_test,
                                                          acc_val))
-            # if args.save_check:
-            #     if not os.path.exists(args.save_check):
-            #         os.makedirs(args.save_check)
+            if args.save_check:
+                if not os.path.exists(args.save_check):
+                    os.makedirs(args.save_check)
 
-            #     print('saving model')
-            #     torch.save(G.state_dict(), os.path.join(args.checkpath,
-            #                                               "G_iter_model_{}_{}_to_{}_step_{}.pth.tar".format(
-            #                                                   args.method, args.source, args.target, step)))
-            #     torch.save(F2.state_dict(),
-            #                os.path.join(args.checkpath, "F2_iter_model_{}_{}_to_{}_step_{}.pth.tar".format(
-            #                    args.method, args.source, args.target, step)))
+                print('saving model')
+                torch.save(G.state_dict(), os.path.join(args.checkpath,
+                                                          "G_iter_model_{}_{}_to_{}_step_{}.pth.tar".format(
+                                                              args.method, args.source, args.target, step)))
+                torch.save(F2.state_dict(),
+                           os.path.join(args.checkpath, "F2_iter_model_{}_{}_to_{}_step_{}.pth.tar".format(
+                               args.method, args.source, args.target, step)))
 
             time_for_one_saving = time.time() - time_last_save
             time_last_save = time.time()
